@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopy Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Shopy <span>Clone</span></a>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, brands and more">
+                </div>
+                <div class="cart-login">
+                    <div class="cart-btn" onclick="openCartModal()">
+                        <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M15.32 2.405H4.887C4.328 1.729 3.58 1.2 2.695 1.2C1.18 1.2 0 2.38 0 3.895C0 5.41 1.18 6.59 2.695 6.59C3.58 6.59 4.328 6.061 4.887 5.385H15.32C15.695 5.385 16 5.08 16 4.705V3.085C16 2.71 15.695 2.405 15.32 2.405ZM2.695 5.39C1.8 5.39 1.2 4.79 1.2 3.895C1.2 3 1.8 2.4 2.695 2.4C3.59 2.4 4.19 3 4.19 3.895C4.19 4.79 3.59 5.39 2.695 5.39ZM15.32 6.795H4.887C4.328 6.119 3.58 5.59 2.695 5.59C1.18 5.59 0 6.77 0 8.285C0 9.8 1.18 10.98 2.695 10.98C3.58 10.98 4.328 10.451 4.887 9.775H15.32C15.695 9.775 16 9.47 16 9.095V7.475C16 7.1 15.695 6.795 15.32 6.795ZM2.695 9.78C1.8 9.78 1.2 9.18 1.2 8.285C1.2 7.39 1.8 6.79 2.695 6.79C3.59 6.79 4.19 7.39 4.19 8.285C4.19 9.18 3.59 9.78 2.695 9.78ZM15.32 11.185H4.887C4.328 10.509 3.58 9.98 2.695 9.98C1.18 9.98 0 11.16 0 12.675C0 14.19 1.18 15.37 2.695 15.37C3.58 15.37 4.328 14.841 4.887 14.165H15.32C15.695 14.165 16 13.86 16 13.485V11.865C16 11.49 15.695 11.185 15.32 11.185ZM2.695 14.17C1.8 14.17 1.2 13.57 1.2 12.675C1.2 11.78 1.8 11.18 2.695 11.18C3.59 11.18 4.19 11.78 4.19 12.675C4.19 13.57 3.59 14.17 2.695 14.17Z"></path>
+                        </svg>
+                        Cart
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <div class="categories">
+        <div class="container">
+            <ul class="category-list">
+                <li class="category-item" onclick="scrollToSection('electronics')">
+                    <img src="https://plus.unsplash.com/premium_photo-1687991219976-818d3855527d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZWxlY3Ryb25pYyUyMGl0ZW1zfGVufDB8fDB8fHww" alt="Electronics">
+                    <span>Electronics</span>
+                </li>
+                <li class="category-item" onclick="scrollToSection('toys')">
+                    <img src="https://images.unsplash.com/photo-1508896694512-1eade558679c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dG95fGVufDB8fDB8fHww" alt="Toys">
+                    <span>Toys</span>
+                </li>
+                <li class="category-item" onclick="scrollToSection('mens-fashion')">
+                    <img src="https://images.unsplash.com/photo-1479064555552-3ef4979f8908?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8TWVuJ3MlMjBGYXNoaW9ufGVufDB8fDB8fHww" alt="Men's Fashion">
+                    <span>Men's Fashion</span>
+                </li>
+                <li class="category-item" onclick="scrollToSection('womens-fashion')">
+                    <img src="https://images.unsplash.com/photo-1668392296954-5b2353d1b17a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8V29tZW4ncyUyMEZhc2hpb3xlbnwwfHwwfHx8MA%3D%3D" alt="Women's Fashion">
+                    <span>Women's Fashion</span>
+                </li>
+                <li class="category-item" onclick="scrollToSection('grocery')">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8R3JvY2VyeXxlbnwwfHwwfHx8MA%3D%3D" alt="Grocery">
+                    <span>Grocery</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Electronics Section -->
+        <section id="electronics" class="section">
+            <h2 class="section-title">Electronics</h2>
+            <div class="products">
+               <div class="product-card" onclick="openProductModal('e1')">
+    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&h=400&q=80
+" alt="Smartphone" class="product-img">
+    <h3 class="product-title">Premium Smartphone</h3>
+    <div class="product-price">₹21,999</div>
+    <div class="product-rating">4.5 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e2')">
+    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&h=400&q=80
+" alt="Laptop" class="product-img">
+    <h3 class="product-title">Ultra Slim Laptop</h3>
+    <div class="product-price">₹55,999</div>
+    <div class="product-rating">4.3 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e3')">
+    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=400&h=400&q=80
+" alt="Wireless Earbuds" class="product-img">
+    <h3 class="product-title">Premium Wireless Earbuds</h3>
+    <div class="product-price">₹2,999</div>
+    <div class="product-rating">4.7 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e4')">
+    <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Smartwatch" class="product-img">
+    <h3 class="product-title">Fitness Smartwatch</h3>
+    <div class="product-price">₹4,499</div>
+    <div class="product-rating">4.4 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e5')">
+    <img src="https://images.unsplash.com/photo-1589256469067-ea99122bbdc4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bluetooth Speaker" class="product-img">
+    <h3 class="product-title">Portable Bluetooth Speaker</h3>
+    <div class="product-price">₹1,999</div>
+    <div class="product-rating">4.6 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e6')">
+    <img src="https://images.unsplash.com/photo-1616296425622-4560a2ad83de?q=80&w=1913&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Gaming Mouse" class="product-img">
+    <h3 class="product-title">RGB Gaming Mouse</h3>
+    <div class="product-price">₹899</div>
+    <div class="product-rating">4.2 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e7')">
+    <img src="https://images.unsplash.com/photo-1691599703435-1d5c2a8212b8?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tablet" class="product-img">
+    <h3 class="product-title">10-inch Android Tablet</h3>
+    <div class="product-price">₹12,999</div>
+    <div class="product-rating">4.3 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('e8')">
+    <img src="https://images.unsplash.com/photo-1594843665794-446ce915d840?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Power Bank" class="product-img">
+    <h3 class="product-title">Fast Charging Power Bank</h3>
+    <div class="product-price">₹1,299</div>
+    <div class="product-rating">4.5 ★</div>
+</div>
+
+            </div>
+        </section>
+
+        <!-- Toys Section -->
+        <section id="toys" class="section">
+            <h2 class="section-title">Toys</h2>
+            <div class="products">
+             <div class="product-card" onclick="openProductModal('t1')">
+    <img src="https://plus.unsplash.com/premium_photo-1723924946092-066c9facd69e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Creative Building Blocks" class="product-img">
+    <h3 class="product-title">Creative Building Blocks</h3>
+    <div class="product-price">₹1,299</div>
+    <div class="product-rating">4.8 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t2')">
+    <img src="https://images.unsplash.com/photo-1642242413035-58b75e06dfeb?q=80&w=2067&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fast Remote Control Car" class="product-img">
+    <h3 class="product-title">Fast Remote Control Car</h3>
+    <div class="product-price">₹1,599</div>
+    <div class="product-rating">4.4 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t3')">
+    <img src="https://plus.unsplash.com/premium_photo-1726783362305-0582cc6dceef?q=80&w=2002&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Challenging Puzzle Set" class="product-img">
+    <h3 class="product-title">Challenging Puzzle Set</h3>
+    <div class="product-price">₹799</div>
+    <div class="product-rating">4.6 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t4')">
+    <img src="https://plus.unsplash.com/premium_photo-1723432015132-48e9838be294?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Superhero Action Figure" class="product-img">
+    <h3 class="product-title">Superhero Action Figure</h3>
+    <div class="product-price">₹999</div>
+    <div class="product-rating">4.7 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t5')">
+    <img src="https://images.unsplash.com/photo-1725297952113-36be1c7cefb4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interactive Toy Robot" class="product-img">
+    <h3 class="product-title">Interactive Toy Robot</h3>
+    <div class="product-price">₹1,799</div>
+    <div class="product-rating">4.5 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t6')">
+    <img src="https://plus.unsplash.com/premium_photo-1743715109044-18dcafa2f1c2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mini Dollhouse Set" class="product-img">
+    <h3 class="product-title">Mini Dollhouse Set</h3>
+    <div class="product-price">₹2,499</div>
+    <div class="product-rating">4.3 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t7')">
+    <img src="https://images.unsplash.com/photo-1577897113292-3b95936e5206?q=80&w=1990&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Family Board Game" class="product-img">
+    <h3 class="product-title">Family Board Game</h3>
+    <div class="product-price">₹799</div>
+    <div class="product-rating">4.6 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('t8')">
+    <img src="https://images.unsplash.com/photo-1614414251195-573d5c568fc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cute Stuffed Animal" class="product-img">
+    <h3 class="product-title">Cute Stuffed Animal</h3>
+    <div class="product-price">₹599</div>
+    <div class="product-rating">4.9 ★</div>
+</div>
+
+
+            </div>
+        </section>
+
+        <!-- Men's Fashion Section -->
+        <section id="mens-fashion" class="section">
+            <h2 class="section-title">Men's Fashion</h2>
+            <div class="products">
+               <div class="product-card" onclick="openProductModal('m1')">
+    <img src="https://images.unsplash.com/photo-1603251578711-3290ca1a0187?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Casual Shirt" class="product-img">
+    <h3 class="product-title">Casual Slim Fit Shirt</h3>
+    <div class="product-price">₹899</div>
+    <div class="product-rating">4.2 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m2')">
+    <img src="https://images.unsplash.com/photo-1555689502-c4b22d76c56f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jeans" class="product-img">
+    <h3 class="product-title">Classic Blue Jeans</h3>
+    <div class="product-price">₹1,499</div>
+    <div class="product-rating">4.5 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m3')">
+    <img src="https://images.unsplash.com/photo-1744838068986-8bd4aae191db?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sports Shoes" class="product-img">
+    <h3 class="product-title">Comfortable Sports Shoes</h3>
+    <div class="product-price">₹2,499</div>
+    <div class="product-rating">4.6 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m4')">
+    <img src="https://plus.unsplash.com/premium_photo-1705554330163-2e0ccc1808e2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8RWxlZ2FudCUyMEZvcm1hbCUyMFNob2VzfGVufDB8fDB8fHww" alt="Formal Shoes" class="product-img">
+    <h3 class="product-title">Elegant Formal Shoes</h3>
+    <div class="product-price">₹3,499</div>
+    <div class="product-rating">4.3 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m5')">
+    <img src="https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=1915&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="T-shirt" class="product-img">
+    <h3 class="product-title">Graphic T-shirt</h3>
+    <div class="product-price">₹699</div>
+    <div class="product-rating">4.1 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m6')">
+    <img src="https://images.unsplash.com/photo-1644364244739-917de400a60d?q=80&w=1848&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jacket" class="product-img">
+    <h3 class="product-title">Stylish Winter Jacket</h3>
+    <div class="product-price">₹2,799</div>
+    <div class="product-rating">4.4 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m7')">
+    <img src="https://images.unsplash.com/photo-1567473810954-507d59716c25?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sunglasses" class="product-img">
+    <h3 class="product-title">Aviator Sunglasses</h3>
+    <div class="product-price">₹1,199</div>
+    <div class="product-rating">4.7 ★</div>
+</div>
+<div class="product-card" onclick="openProductModal('m8')">
+    <img src="https://images.unsplash.com/photo-1589988574803-455587b19171?q=80&w=1973&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wristwatch" class="product-img">
+    <h3 class="product-title">Luxury Wristwatch</h3>
+    <div class="product-price">₹4,999</div>
+    <div class="product-rating">4.8 ★</div>
+</div>
+
+            </div>
+        </section>
+
+        <!-- Women's Fashion Section -->
+        <section id="womens-fashion" class="section">
+            <h2 class="section-title">Women's Fashion</h2>
+            <div class="products">
+   
+             <div class="product-card" onclick="openProductModal('w1')">
+    <img src="https://plus.unsplash.com/premium_photo-1661380525096-7d63c5f0265b?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Floral Dress" class="product-img">
+    <h3 class="product-title">Elegant Floral Dress</h3>
+    <div class="product-price">₹1,299</div>
+    <div class="product-rating">4.7 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w2')">
+    <img src="https://images.unsplash.com/photo-1591656852283-29bed2fe05ee?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3R5bGlzaCUyMEhhbmRiYWd8ZW58MHx8MHx8fDA%3D" alt="Handbag" class="product-img">
+    <h3 class="product-title">Stylish Handbag</h3>
+    <div class="product-price">₹1,999</div>
+    <div class="product-rating">4.3 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w3')">
+    <img src="https://images.unsplash.com/photo-1584473457417-bd0afe798ae1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q29tZm9ydGFibGUlMjBIZWVsc3xlbnwwfHwwfHx8MA%3D%3D" alt="Heels" class="product-img">
+    <h3 class="product-title">Comfortable Heels</h3>
+    <div class="product-price">₹1,499</div>
+    <div class="product-rating">4.2 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w4')">
+    <img src="https://images.unsplash.com/photo-1625976794763-efc500507b4c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8VHJlbmR5JTIwVG90ZSUyMEJhZ3xlbnwwfHwwfHx8MA%3D%3D" alt="Tote Bag" class="product-img">
+    <h3 class="product-title">Trendy Tote Bag</h3>
+    <div class="product-price">₹1,799</div>
+    <div class="product-rating">4.6 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w5')">
+    <img src="https://images.unsplash.com/photo-1670718221502-42bee4ee96c7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2xhc3NpYyUyMFN1bmdsYXNzZXN8ZW58MHx8MHx8fDA%3D" alt="Sunglasses" class="product-img">
+    <h3 class="product-title">Classic Sunglasses</h3>
+    <div class="product-price">₹999</div>
+    <div class="product-rating">4.5 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w6')">
+    <img src="https://images.unsplash.com/photo-1670177257750-9b47927f68eb?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8THV4dXJ5JTIwV2F0Y2h8ZW58MHx8MHx8fDA%3D" alt="Watch" class="product-img">
+    <h3 class="product-title">Luxury Watch</h3>
+    <div class="product-price">₹5,499</div>
+    <div class="product-rating">4.8 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w7')">
+    <img src="https://images.unsplash.com/photo-1727515546577-f7d82a47b51d?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8R2VudWluZSUyMExlYXRoZXIlMjBKYWNrZXR8ZW58MHx8MHx8fDA%3D" alt="Leather Jacket" class="product-img">
+    <h3 class="product-title">Genuine Leather Jacket</h3>
+    <div class="product-price">₹3,999</div>
+    <div class="product-rating">4.4 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('w8')">
+    <img src="https://images.unsplash.com/photo-1551028442-ee84b4d3a50a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RWxlZ2FudCUyMFNpbGslMjBTY2FyZnxlbnwwfHwwfHx8MA%3D%3D" alt="Silk Scarf" class="product-img">
+    <h3 class="product-title">Elegant Silk Scarf</h3>
+    <div class="product-price">₹1,199</div>
+    <div class="product-rating">4.9 ★</div>
+</div>
+
+            </div>
+        </section>
+
+        <!-- Grocery Section -->
+        <section id="grocery" class="section">
+            <h2 class="section-title">Grocery</h2>
+            <div class="products">
+              <div class="product-card" onclick="openProductModal('g1')">
+  <img src=https://images.unsplash.com/photo-1627482265910-5c0ff6bee088?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8UHJlbWl1bSUyMEJhc21hdGklMjBSaWNlfGVufDB8fDB8fHww" alt="Rice" class="product-img">
+  <h3 class="product-title">Premium Basmati Rice</h3>
+  <div class="product-price">₹399</div>
+  <div class="product-rating">4.6 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g2')">
+  <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RXh0cmElMjBWaXJnaW4lMjBPbGl2ZSUyME9pbHxlbnwwfHwwfHx8MA%3D%3D" alt="Olive Oil" class="product-img">
+  <h3 class="product-title">Extra Virgin Olive Oil</h3>
+  <div class="product-price">₹599</div>
+  <div class="product-rating">4.5 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g3')">
+  <img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=300&h=300&q=80" alt="Coffee" class="product-img">
+  <h3 class="product-title">Organic Coffee Beans</h3>
+  <div class="product-price">₹499</div>
+  <div class="product-rating">4.8 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g4')">
+  <img src="https://images.unsplash.com/photo-1606676150052-8603db33b494?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2hvbGUlMjBXaGVhdCUyMFBhc3RhfGVufDB8fDB8fHww" alt="Pasta" class="product-img">
+  <h3 class="product-title">Whole Wheat Pasta</h3>
+  <div class="product-price">₹299</div>
+  <div class="product-rating">4.3 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g5')">
+  <img src="https://images.unsplash.com/photo-1665538941694-e1705e52d1b2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RmFybSUyMEZyZXNoJTIwRWdncyUyMCg2JTIwcGNzKXxlbnwwfHwwfHx8MA%3D%3D" alt="Eggs" class="product-img">
+  <h3 class="product-title">Farm Fresh Eggs (6 pcs)</h3>
+  <div class="product-price">₹99</div>
+  <div class="product-rating">4.7 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g6')">
+  <img src=https://plus.unsplash.com/premium_photo-1664273586606-d7c9804729c2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8TmF0dXJhbCUyME9yZ2FuaWMlMjBIb25leXxlbnwwfHwwfHx8MA%3D%3D" alt="Honey" class="product-img">
+  <h3 class="product-title">Natural Organic Honey</h3>
+  <div class="product-price">₹349</div>
+  <div class="product-rating">4.4 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g7')">
+  <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=300&h=300&q=80" alt="Milk" class="product-img">
+  <h3 class="product-title">Toned Milk (1L)</h3>
+  <div class="product-price">₹65</div>
+  <div class="product-rating">4.2 ★</div>
+</div>
+
+<div class="product-card" onclick="openProductModal('g8')">
+  <img src="https://images.unsplash.com/photo-1643926544872-dbcd8805e870?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RnJlc2glMjBPcmdhbmljJTIwVG9tYXRvZXN8ZW58MHx8MHx8fDA%3D" alt="Tomatoes" class="product-img">
+  <h3 class="product-title">Fresh Organic Tomatoes</h3>
+  <div class="product-price">₹49</div>
+  <div class="product-rating">4.5 ★</div>
+</div>
+           </div>
+        </section>
+    </main>
+
+    <!-- Product Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeProductModal()">&times;</span>
+            <div class="product-details" id="productDetails">
+                <!-- Product details will be filled dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span class="close-modal" onclick="closeCartModal()">&times;</span>
+            <h2>Shopping Cart</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be filled dynamically -->
+            </div>
+            <div id="cartEmpty" class="empty-cart">
+                <img src="/api/placeholder/100/100" alt="Empty Cart">
+                <h3>Your cart is empty!</h3>
+                <p>Add items to it now.</p>
+                <button class="btn-shop-now" onclick="closeCartModal()">Shop Now</button>
+            </div>
+            <div id="cartTotalSection" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ABOUT</h3>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Flipkart Stories</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>HELP</h3>
+                <ul>
+                    <li><a href="#">Payments</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Cancellation & Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Report Infringement</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>POLICY</h3>
+                <ul>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Security</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>SOCIAL</h3>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Mail Us:</h3>
+                <p>Shopy Internet Private Limited,<br>
+                   Buildings Alyssa, Begonia &<br>
+                   Clove Embassy Tech Village,<br>
+                   Outer Ring Road, Devarabeesanahalli Village,<br>
+                   Bengaluru, 560103,<br>
+                   Karnataka, India</p>
+            </div>
+            <div class="footer-section">
+                <h3>Registered Office Address:</h3>
+                <p>Shopy Internet Private Limited,<br>
+                   Buildings Alyssa, Begonia &<br>
+                   Clove Embassy Tech Village,<br>
+                   Outer Ring Road, Devarabeesanahalli Village,<br>
+                   Bengaluru, 560103,<br>
+                   Karnataka, India<br>
+                   CIN: U51109KA2012PTC066107<br>
+                   Telephone: 1800 202 9898</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+           
+            <div class="copyright">
+                <p>&copy; 2025, Shopy Clone. All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+</body>
+</html>
+      
